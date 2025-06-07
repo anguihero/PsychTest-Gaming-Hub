@@ -11,20 +11,38 @@ const initialResults = storedResults ? JSON.parse(storedResults) : [];
 export const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
+  const [player, setPlayer] = useState(initialPlayer);
+  const [progress, setProgress] = useState(initialProgress);
+  const [results, setResults] = useState(initialResults);
 
+  useEffect(() => {
+    localStorage.setItem('player', JSON.stringify(player));
+  }, [player]);
 
-const [player, setPlayer] = useState(window.__INITIAL_STATE__?.player || null);
-const [progress, setProgress] = useState(window.__INITIAL_STATE__?.progress || []);
-const [results, setResults] = useState(window.__INITIAL_STATE__?.results || []);
+  useEffect(() => {
+    localStorage.setItem('progress', JSON.stringify(progress));
+  }, [progress]);
 
-useEffect(() => {
-  localStorage.setItem('player', JSON.stringify(player));
-}, [player]);
+  useEffect(() => {
+    localStorage.setItem('results', JSON.stringify(results));
+  }, [results]);
 
-useEffect(() => {
-  localStorage.setItem('progress', JSON.stringify(progress));
-}, [progress]);
+  const login = (name) => {
+    setPlayer({ name, avatar: null, stats: { fuerza: 0, resistencia: 0, velocidad: 0 } });
+  };
 
-useEffect(() => {
-  localStorage.setItem('results', JSON.stringify(results));
-}, [results]);
+  const updateProfile = (avatar, stats) => {
+    setPlayer((prev) => ({ ...prev, avatar, stats }));
+  };
+
+  const completeTest = (testId, score, summary) => {
+    setProgress((prev) => [...prev, testId]);
+    setResults((prev) => [...prev, { testId, score, summary }]);
+  };
+
+  return (
+    <GameContext.Provider value={{ player, login, updateProfile, progress, results, completeTest }}>
+      {children}
+    </GameContext.Provider>
+  );
+};
