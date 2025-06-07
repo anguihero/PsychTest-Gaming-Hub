@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Reto 1: Conociendo la Montaña",
+    "questions": [
+      {
+        "question": "¿Cuál es la montaña más alta del mundo?",
+        "options": ["Everest", "K2", "Makalu", "Annapurna"],
+        "answer": "Everest"
+      },
+      {
+        "question": "¿En qué continente está el Everest?",
+        "options": ["Asia", "África", "Europa", "América"],
+        "answer": "Asia"
+      }
+    ]
+  },
+  {
+    "title": "Reto 2: Preparación Física",
+    "questions": [
+      {
+        "question": "¿Qué músculo es importante para escalar?",
+        "options": ["Bíceps", "Trapecio", "Glúteos", "Todos los anteriores"],
+        "answer": "Todos los anteriores"
+      },
+      {
+        "question": "¿Qué es importante llevar en una expedición?",
+        "options": ["Comida", "Ropa térmica", "Agua", "Todo lo anterior"],
+        "answer": "Todo lo anterior"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+¿Cómo usarlo?
+Guarda este contenido en un archivo package.json en la raíz del proyecto.
+
+Ejecuta:
+
+bash
+npm install
+
+Y luego:
+
+bash
+npm start

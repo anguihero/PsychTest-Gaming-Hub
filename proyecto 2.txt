@@ -1,0 +1,27 @@
+src/
+├── App.js
+├── index.js
+├── assets/
+│   └── avatars/     # Avatares en PNG o SVG
+├── components/
+│   ├── AvatarSelector.js
+│   ├── LoginForm.js
+│   ├── MountainNode.js
+│   └── TestQuestion.js
+├── context/
+│   └── GameContext.js
+├── data/
+│   ├── questions.json
+│   └── avatars.json
+├── pages/
+│   ├── HomePage.js          # Login
+│   ├── PlayerProfile.js     # Perfil y edición
+│   ├── MountainMap.js       # Ruta de progreso
+│   ├── TestModule.js        # Test interactivo
+│   └── ResultsPage.js       # Historial de resultados
+├── routes/
+│   └── AppRouter.js
+├── styles/
+│   └── global.css
+└── utils/
+    └── scoreAnalyzer.js     # Lógica para resumen textual del desempeño

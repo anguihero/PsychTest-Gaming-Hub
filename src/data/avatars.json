@@ -1,0 +1,17 @@
+[
+  {
+    "id": "explorer1",
+    "name": "Explorador 1",
+    "image": "/assets/avatars/explorer1.png"
+  },
+  {
+    "id": "explorer2",
+    "name": "Explorador 2",
+    "image": "/assets/avatars/explorer2.png"
+  },
+  {
+    "id": "explorer3",
+    "name": "Explorador 3",
+    "image": "/assets/avatars/explorer3.png"
+  }
+]
