@@ -10,6 +10,8 @@ import LoginPage from '../pages/LoginPage';
 import PrivateRoute from './PrivateRoute';
 import AdminDashboard from '../pages/AdminDashboard';
 import UserHome from '../pages/UserHome';
+import Configuracion from '../pages/Configuracion'; 
+import AcercaDe from '../pages/AcercaDe'
 
 const AppRouter = () => (
   <Routes>
@@ -45,6 +47,7 @@ const AppRouter = () => (
         }
       />
     <Route path="*" element={<Navigate to="/" />} />
+    <Route path="/Configuracion" element={<Configuracion />} />
   </Routes>
 );
 export default AppRouter;
