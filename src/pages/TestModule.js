@@ -1,8 +1,9 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { GameContext } from '../context/GameContext';
 import { useParams, useNavigate } from 'react-router-dom';
 import questions from '../data/questions.json';
 import scoreAnalyzer from '../utils/scoreAnalyzer';
+import { logout } from '../utils/logout';
 
 const TestModule = () => {
   const { id } = useParams();
@@ -16,7 +17,10 @@ const TestModule = () => {
   };
 
   const handleSubmit = () => {
-    const correct = challenge.questions.reduce((acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0), 0);
+    const correct = challenge.questions.reduce(
+      (acc, q, i) => acc + (answers[i] === q.answer ? 1 : 0),
+      0
+    );
     const score = Math.round((correct / challenge.questions.length) * 100);
     const summary = scoreAnalyzer(score);
     completeTest(parseInt(id), score, summary);
@@ -39,12 +43,17 @@ const TestModule = () => {
                 value={opt}
                 checked={answers[index] === opt}
                 onChange={() => handleSelect(index, opt)}
-              /> {opt}
+              />{' '}
+              {opt}
             </label>
           ))}
         </div>
       ))}
       <button onClick={handleSubmit}>Enviar Respuestas</button>
+
+      <button onClick={() => logout(navigate)} style={{ marginTop: '2rem' }}>
+        Cerrar sesión
+      </button>
     </div>
   );
 };
