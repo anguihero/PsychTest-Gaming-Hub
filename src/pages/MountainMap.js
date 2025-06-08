@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { GameContext } from '../context/GameContext';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../utils/logout';
 
 const MountainMap = () => {
   const { progress } = useContext(GameContext);
@@ -20,19 +21,25 @@ const MountainMap = () => {
     }
   };
 
-
   return (
     <div className="mountain-map">
       <h2>Ruta del Everest</h2>
       <ul>
         {[...Array(totalChallenges)].map((_, index) => (
           <li key={index}>
-            <button onClick={() => handleSelectChallenge(index)} disabled={index > 0 && !progress.includes(index - 1)}>
+            <button
+              onClick={() => handleSelectChallenge(index)}
+              disabled={index > 0 && !progress.includes(index - 1)}
+            >
               {progress.includes(index) ? '✅' : '🔒'} Reto {index + 1}
             </button>
           </li>
         ))}
       </ul>
+
+      <button onClick={() => logout(navigate)} style={{ marginTop: '2rem' }}>
+        Cerrar sesión
+      </button>
     </div>
   );
 };

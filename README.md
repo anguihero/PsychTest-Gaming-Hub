@@ -46,17 +46,32 @@ Mediante la resolución de tests interactivos, los usuarios entrenan su autocono
 ## 🧩 Estructura de Carpetas
 
 ```
-src/
-├── assets/              # Recursos (avatares)
-├── components/          # Componentes reutilizables
-├── context/             # Estado global (GameContext)
-├── data/                # Preguntas y avatares en JSON
-├── pages/               # Vistas del juego
-├── routes/              # Navegación con React Router
-├── styles/              # Estilos globales CSS
-├── utils/               # Funciones auxiliares como scoreAnalyzer
-├── App.js               # Punto de entrada con GameProvider
-└── index.js             # Render de ReactDOM
+PsychTest-Gaming-Hub/
+├── backend/
+│   ├── database/
+│   │   └── everest.db               # SQLite fuera de `src`
+│   ├── scripts/
+│   │   ├── init_db.py               # Crear tablas
+│   │   ├── add_user.py              # Agregar usuario
+│   │   ├── assign_role.py           # Dar roles/accesos
+│   │   └── log_test_result.py       # Registrar progreso/resultados
+│   └── main.py                      # API con FastAPI para login y otros endpoints
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── context/
+│   ├── data/
+│   ├── pages/
+│   ├── routes/
+│   ├── styles/
+│   ├── utils/
+│   ├── App.js
+│   └── index.js
+├── .gitignore
+├── package.json
+├── README.md
+
 ```
 
 ---

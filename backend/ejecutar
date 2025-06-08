@@ -1,0 +1,4 @@
+C:\Users\anmmu\OneDrive\Proyectos\venv\Scripts\Activate.ps1
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+python .\backend\scripts\main.py
+python -m backend.scripts.main
