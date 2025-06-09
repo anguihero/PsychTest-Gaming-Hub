@@ -52,6 +52,7 @@ backend/database/backups/
 .ipynb_checkpoints/
 *.
 ipynb~
+backend/scripts/explorador_everest_db.ipynb
 
 # --------------------------------
 # IDEs y editores
