@@ -1,8 +1,11 @@
 import { useContext } from 'react';
 import { GameContext } from '../context/GameContext';
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../utils/logout';
 
 const ResultsPage = () => {
   const { results } = useContext(GameContext);
+  const navigate = useNavigate();
 
   return (
     <div className="results-page">
