@@ -1,0 +1,56 @@
+.parada-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+.descripcion {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.pregunta-box {
+  background: #e0f7fa;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pista {
+  font-style: italic;
+  color: #888;
+}
+
+.opciones-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.opcion {
+  background-color: #42a5f5;
+  color: white;
+  font-size: 1rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.opcion:hover {
+  background-color: #1e88e5;
+}
+
+.opcion.seleccionada {
+  background-color: #66bb6a !important;
+}
