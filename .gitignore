@@ -8,10 +8,13 @@ yarn-debug.log*
 *.seed
 *.pid.lock
 
+
 # --------------------------------
 # Directorios de dependencias
 node_modules/
 .npm/
+ejecucion_proyecto.txt
+Resumen Ejecutivo Integrado.docx
 
 # --------------------------------
 # Cache de herramientas

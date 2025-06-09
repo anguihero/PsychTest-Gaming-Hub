@@ -1,4 +1,4 @@
-# 🧠⛰️ EverMind Route
+# 🧠⛰️ EverMindEst Route
 
 **EverMind Route** es un juego educativo y motivacional en formato web, diseñado para simular una travesía de escalada al Everest, en la que un único jugador supera retos tipo test secuenciales. Cada reto representa un paso más hacia la cumbre del éxito personal, profesional y mental. La app fusiona conceptos de psicología, gamificación y superación en un desarrollo modular hecho con React.
 

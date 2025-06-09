@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 
-// Intentar leer desde localStorage
+// Leer desde localStorage
 const storedPlayer = localStorage.getItem('player');
 const storedProgress = localStorage.getItem('progress');
 const storedResults = localStorage.getItem('results');
@@ -16,11 +16,11 @@ export const GameProvider = ({ children }) => {
   const [progress, setProgress] = useState(initialProgress);
   const [results, setResults] = useState(initialResults);
 
-  // Sincroniza player con localStorage
+  // Guardar en localStorage
   useEffect(() => {
     if (player) {
       localStorage.setItem('player', JSON.stringify(player));
-      localStorage.setItem('username', player.name);  // sincroniza username aparte
+      localStorage.setItem('username', player.name);
     }
   }, [player]);
 
@@ -32,23 +32,33 @@ export const GameProvider = ({ children }) => {
     localStorage.setItem('results', JSON.stringify(results));
   }, [results]);
 
-  // ✅ Login: recibe un nombre y crea un jugador básico
+  // Login
   const login = (name) => {
     setPlayer({ name, avatar: null, stats: { fuerza: 0, resistencia: 0, velocidad: 0 } });
   };
 
-  // ✅ Actualiza perfil (avatar y stats)
+  // Actualizar perfil
   const updateProfile = (avatar, stats) => {
     setPlayer((prev) => ({ ...prev, avatar, stats }));
   };
 
-  // ✅ Guarda test completado
+  // Registrar test completado con resultado
   const completeTest = (testId, score, summary) => {
-    setProgress((prev) => [...prev, testId]);
+    setProgress((prev) => [...new Set([...prev, testId])]);
     setResults((prev) => [...prev, { testId, score, summary }]);
   };
 
-  // ✅ Resetea todo
+  // Registrar test completado sin resultado (para navegación de montaña)
+  const completeTestSimple = (testId) => {
+    setProgress((prev) => [...new Set([...prev, testId])]);
+  };
+
+  // Validar si se puede acceder al reto
+  const canAccessChallenge = (testId) => {
+    return testId === 0 || progress.includes(testId - 1);
+  };
+
+  // Reset completo
   const resetGame = () => {
     setPlayer(null);
     setProgress([]);
@@ -70,7 +80,9 @@ export const GameProvider = ({ children }) => {
         progress,
         results,
         completeTest,
+        completeTestSimple,
         resetGame,
+        canAccessChallenge,
       }}
     >
       {children}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../assets/img/everest_002.png'; // ✅ fondo grande
+import backgroundImage from '../assets/img/everest_002.png';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const HomePage = () => {
         padding: '2rem',
       }}
     >
-      <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Bienvenido a Psych-Test Gaming Hub - Everest 🏔️</h1>
+      <h1 style={{ fontSize: '3rem', marginBottom: '1rem' }}>Bienvenido a EverMindEst Route 🏔️</h1>
       <p style={{ fontSize: '1.2rem', maxWidth: '600px' }}>Explora tu mente mientras escalas. Aventura psicológica en cada reto.</p>
 
       <button

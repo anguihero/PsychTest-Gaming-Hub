@@ -21,10 +21,6 @@ const ResultsPage = () => {
           ))}
         </ul>
       )}
-
-      <button onClick={() => logout(navigate)} style={{ marginTop: '2rem' }}>
-        Cerrar sesión
-      </button>
     </div>
   );
 };
